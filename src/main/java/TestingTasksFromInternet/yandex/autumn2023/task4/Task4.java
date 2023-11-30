@@ -1,0 +1,205 @@
+package TestingTasksFromInternet.yandex.autumn2023.task4;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Task4 {
+
+    public static void main(String[] args) throws IOException {
+
+        int n = 0;
+        int countS = 0;
+        char[] lang = new char[0];
+        int[] id = new int[0];
+
+        try (InputStreamReader in = new InputStreamReader(System.in);
+             BufferedReader buffer = new BufferedReader(in)) {
+
+            String line;
+
+            while ((line = buffer.readLine()) != null) {
+                String[] tokens = line.split(" ");
+                if (countS == 0) {
+                    n = Integer.parseInt(tokens[0]);
+                    countS++;
+                    continue;
+                }
+                if (countS == 1) {
+                    lang = new char[n];
+                    for (int i = 0; i < n; i++) {
+                        lang[i] = tokens[i].charAt(0);
+                    }
+                    countS++;
+                    continue;
+                }
+                if (countS == 2) {
+                    id = new int[2 * (n + 1)];
+                    for (int i = 0; i < id.length; i++) {
+                        id[i] = Integer.parseInt(tokens[i]);
+                    }
+                    break;
+                }
+            }
+        }
+
+        StringBuilder result = new StringBuilder();
+        int barrier[] = calculateBarriers(id, lang);
+        PrintWriter printWriter = new PrintWriter(System.out);
+
+        for (int i = 0; i < barrier.length; i++) {
+            result.append(barrier[i] + " ");
+        }
+        printWriter.print(result);
+        printWriter.flush();
+
+    }
+
+    public static int[] calculateBarriers(int[] id, char[] lang) {
+
+        List<Emloyer> empList = new ArrayList<>();
+        int level = 1;
+        int position = 1;
+
+        for (int i = 0; i < lang.length; i++) {
+//            empList.add(new Emloyer(i + 1, lang[i], 0, 0, 0, false, false));
+        }
+
+        for (int i = position; i < id.length; i++) {
+
+            for (int j = 0; j < empList.size(); j++) {
+                if (i < id.length - 1) {
+                    if (id[i + 1] == id[i] && empList.get(j).id == id[i]) {
+                        position++;
+                        empList.get(j).position = position;
+                        empList.get(j).level = level;
+                        i++;
+                        break;
+                    }
+                }
+
+                if (empList.get(j).id == id[i] && empList.get(j).isActive == false) {
+                    empList.get(j).isBoss = true;
+                    empList.get(j).position = position;
+                    empList.get(j).level = level;
+                    empList.get(j).isActive = true;
+
+                    position++;
+                    level++;
+                    break;
+                }
+
+                if (empList.get(j).id == id[i] && empList.get(j).isActive == true) {
+                    level--;
+                    break;
+                }
+            }
+        }
+
+//        empList.add(0, new Emloyer(0, '0', 0, 0, 0, true, true));
+        int[] barrier = new int[lang.length];
+
+        for (int i = 1; i < empList.size(); i++) {
+
+            for (int j = i; j >= 0; j--) {
+
+                if (empList.get(j).level < empList.get(i).level &&
+                        empList.get(j).position < empList.get(i).position &&
+                        empList.get(j).isBoss &&
+                        empList.get(j).lang == empList.get(i).lang) {
+
+                    barrier[(empList.get(i).id - 1)] = empList.get(i).level - empList.get(j).level - 1;
+                    break;
+
+                } else {
+                    barrier[(empList.get(i).id - 1)] = empList.get(i).level - 1;
+                }
+            }
+        }
+
+        return barrier;
+    }
+}
+
+class Emp {
+    public Emp(int id, char lang, int position, int level, int barrier, boolean isActive, boolean isBoss) {
+        this.id = id;
+        this.lang = lang;
+        this.position = position;
+        this.level = level;
+        this.barrier = barrier;
+        this.isActive = isActive;
+        this.isBoss = isBoss;
+    }
+
+    int id;
+    char lang;
+    int position;
+    int level;
+    int barrier;
+    boolean isActive;
+    boolean isBoss;
+
+}
+
+
+//    @Override
+//    public String toString() {
+//        return "Emp{" +
+//                "id=" + id +
+//                ", lang=" + lang +
+//                ", position=" + position +
+//                ", level=" + level +
+//                ", barrier=" + barrier +
+//                ", isActive=" + isActive +
+//                ", isBoss=" + isBoss +
+//                '}';
+//    }
+
+// for (int i = 0; i < empList.size(); i++) {
+//        System.out.println(empList.get(i));
+//        }
+//        System.out.println();
+
+
+// System.out.println(n);
+//         System.out.println(Arrays.toString(lang));
+//         System.out.println(Arrays.toString(id));
+
+
+//старый неправильный код
+//        for (int i = 0; i < lang.length; i++) {
+//            for (int k = 0; k < lang.length; k++) {
+//
+//                for (int j = position; j < id.length; j++) {
+//
+//                    if (j < id.length - 1) {
+//                        if (id[j + 1] == id[j]) {
+//                            position++;
+//                            empList.get(i).position = position;
+//                            empList.get(i).level = level;
+//                            j++;
+//                            break;
+//                        }
+//                    }
+//
+//                    if (empList.get(k).id == id[j] && empList.get(k).isActive == true) {
+//                        level--;
+//                        break;
+//                    }
+//
+//                    if (empList.get(k).isActive == false && empList.get(k).id == id[j]) {
+//                        position++;
+//                        level++;
+//                        empList.get(i).position = position;
+//                        empList.get(i).level = level;
+//                        empList.get(i).isActive = true;
+//                        break;
+//                    }
+//
+//                }
+//            }
+//        }
