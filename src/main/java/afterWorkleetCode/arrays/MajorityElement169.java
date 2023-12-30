@@ -53,10 +53,11 @@ public class MajorityElement169 {
 
     public static void main(String[] args) {
         int[] array = {2, 2, 1, 1, 1, 2, 2};
+        int[] array1 = {2, 2, 1, 1, 1, 2, 2,5,6,78,78};
         int[] array2 = {6, 5, 5};
 //        countingElements(array);
 
-        System.out.println(majorityElement(array2));
+        System.out.println(majorityElement(array1));
 
 
     }
