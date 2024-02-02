@@ -13,6 +13,12 @@ public class CountingCharsInString {
         Map<String, Long> output = Arrays.stream(input.split("")).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
         System.out.println(output);
 
+// вот как с массивом сделать надо-> упаковка (boxed()) делает
+//        Map<Integer, Long> map = Arrays.stream(nums)
+//                .boxed()
+//                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+//        System.out.println(map);
+
         String another = Arrays.stream(input.split(""))
                 .filter(m -> m.equals("q"))
                 .toString();
@@ -50,6 +56,7 @@ public class CountingCharsInString {
 //                map.put(x, 1);
 //            }
 //        }
+
 // чтоб подсчитать максимальное встречающееся количество раз
 //        Map.Entry<Integer, Integer> maxCounted = null;
 //        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {

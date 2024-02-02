@@ -43,7 +43,7 @@ public class ExpertTestSecondVers {
         ArrayList<Integer> arr2 = new ArrayList<>();
         arr2.add(1);
         arr2.add(13);
-        arr2.add(144);
+        arr2.add(13);
         arr2.add(200);
 
         merge(arr1, arr2);

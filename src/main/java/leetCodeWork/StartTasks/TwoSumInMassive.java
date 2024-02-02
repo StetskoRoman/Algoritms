@@ -55,7 +55,7 @@ public class TwoSumInMassive {
 
     public static void main(String[] args) {
         int[] nums = {-3, 0, 2, 4, 5};
-        System.out.println(Arrays.toString(twoSum(nums, 3)));
+        System.out.println(Arrays.toString(twoSum(nums, 6)));
 
     }
 

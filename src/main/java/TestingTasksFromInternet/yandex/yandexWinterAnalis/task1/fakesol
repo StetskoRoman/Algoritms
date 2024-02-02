@@ -1,0 +1,47 @@
+import sqlite3
+import math
+
+conn = sqlite3.connect('database.db')
+cursor = conn.cursor()
+
+# выбираем uuid, количество показов и количество кликов для каждого uuid
+query = '''
+SELECT uuid, COUNT(CASE WHEN event = 'show' THEN 1 END) AS shows, COUNT(CASE WHEN event = 'click' THEN 1 END) AS clicks
+FROM feed_events
+GROUP BY uuid
+'''
+
+# получаем данные по каждому uuid
+uuid_data = {}
+for row in cursor.execute(query):
+    uuid_data[row[0]] = {'shows': row[1], 'clicks': row[2]}
+
+# выбираем все события 'open'
+open_events = []
+for row in cursor.execute("SELECT uuid, timestamp FROM feed_events WHERE event = 'open'"):
+    open_events.append(row)
+
+# выбираем последнее событие 'open' для каждого uuid
+uuid_last_open = {}
+for event in sorted(open_events, key=lambda x: x[1], reverse=True):
+    if event[0] not in uuid_last_open:
+        uuid_last_open[event[0]] = event[1]
+
+# считаем CTR для каждого uuid
+uuid_ctr = {}
+for uuid, data in uuid_data.items():
+    if uuid in uuid_last_open:
+        shows = data['shows']
+        clicks = data['clicks']
+        if shows > 0:
+            ctr = clicks / shows
+        else:
+            ctr = 0
+        uuid_ctr[uuid] = round(ctr, 2)
+
+# сортируем uuid по CTR и времени последнего события 'open'
+sorted_uuid = sorted(uuid_ctr.items(), key=lambda x: (-x[1], uuid_last_open[x[0]]))
+
+# выводим первые 10 uuid
+for uuid, ctr in sorted_uuid[:10]:
+    print(uuid)

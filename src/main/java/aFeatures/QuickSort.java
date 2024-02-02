@@ -59,43 +59,6 @@ public class QuickSort {
                 System.out.println("Стало");
                 System.out.println(Arrays.toString(x));
 
-//        int countLine = 0;
-//        int n = 0;
-//        long[] nums = new long[0];
-//        long x = 0;
-//
-//        PrintWriter printWriter = new PrintWriter(System.out);
-//
-//
-//        try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in))) {
-//            String line;
-//
-//            while ((line = bufferedReader.readLine()) != null) {
-//                String[] tokens = line.split(" ");
-//
-//                if (countLine == 0) {
-//                    n = Integer.parseInt(tokens[0]);
-//                    nums = new long[n];
-//                    countLine++;
-//                    continue;
-//                }
-//
-//                if (countLine == 1) {
-//
-//                    for (int i = 0; i < n; i++) {
-//                        nums[i] = Long.parseLong(tokens[i]);
-//                    }
-//                    break;
-//                }
-//            }
-//        }
-//
-//        quickSort(nums, 0, nums.length);
-//        for (int i = 0; i < nums.length; i++) {
-//            printWriter.print(nums[i] + " ");
-//
-//        }
-//        printWriter.flush();
     }
 }
 
