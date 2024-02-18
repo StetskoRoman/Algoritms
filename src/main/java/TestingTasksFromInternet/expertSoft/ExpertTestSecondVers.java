@@ -1,4 +1,4 @@
-package TestingTasksFromInternet;
+package TestingTasksFromInternet.expertSoft;
 
 import java.util.ArrayList;
 
@@ -27,7 +27,6 @@ public class ExpertTestSecondVers {
                 m--;
             }
         }
-
     }
 
 
@@ -36,15 +35,16 @@ public class ExpertTestSecondVers {
 
 //            ArrayList<Integer> arr1 = (ArrayList<Integer>) List.of(11, 22, 33);
         ArrayList<Integer> arr1 = new ArrayList<>();
-        arr1.add(3);
-        arr1.add(222);
-        arr1.add(233);
-        arr1.add(250);
+        arr1.add(1);
+        arr1.add(1);
+        arr1.add(1);
+        arr1.add(1);
         ArrayList<Integer> arr2 = new ArrayList<>();
         arr2.add(1);
-        arr2.add(13);
-        arr2.add(13);
-        arr2.add(200);
+        arr2.add(1);
+        arr2.add(1);
+        arr2.add(1);
+        arr2.add(4);
 
         merge(arr1, arr2);
 

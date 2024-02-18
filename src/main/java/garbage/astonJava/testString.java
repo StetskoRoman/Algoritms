@@ -1,8 +1,13 @@
 package garbage.astonJava;
 
 public class testString {
-
+    static Boolean test;
     public static void main(String[] args) {
+
+
+        if (test) {
+            System.out.println(true);
+        }
 
         String a = "asd";
         System.out.println(a);

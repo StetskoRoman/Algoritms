@@ -1,8 +1,8 @@
 package TestingTasksFromInternet.yandex.coderun;
 
-import junit.framework.TestCase;
 
-public class Task6LiftNOPTest extends TestCase {
+
+public class Task6LiftNOPTest  {
 
     public void testMain() {
     }

@@ -51,6 +51,14 @@ public class BinarySearcherGeneric<T extends Comparable<T>> {
         System.out.println(posCurrWay);
         System.out.println(posCurrWay + "    way = " + massive[posCurrWay]);
 
+        Integer[] integers = new Integer[2];
+        integers[0] = 4;
+        integers[1] = 2;
+        Integer a = 2;
+        BinarySearcherGeneric<Integer> generic = new BinarySearcherGeneric<>(integers);
+        int pos = generic.search(a);
+        System.out.println("pos = " + pos);
+
     }
 
     public int search(Comparable<T> v) {

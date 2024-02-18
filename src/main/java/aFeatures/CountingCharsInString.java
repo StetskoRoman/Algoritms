@@ -12,7 +12,8 @@ public class CountingCharsInString {
 
         Map<String, Long> output = Arrays.stream(input.split("")).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
         System.out.println(output);
-
+//        вот как с листом
+//Map<Integer, Long> integerIntegerMap = integerList.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
 // вот как с массивом сделать надо-> упаковка (boxed()) делает
 //        Map<Integer, Long> map = Arrays.stream(nums)
 //                .boxed()

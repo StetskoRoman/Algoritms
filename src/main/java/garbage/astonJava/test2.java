@@ -30,8 +30,8 @@ class ThreadDemo {
         new test2().start();
         new test2(new RunnableDemo()).start();
 
-        RunnableDemo runnableDemo = new RunnableDemo();
-        Thread thread = new Thread(runnableDemo);
-        thread.start();
+//        RunnableDemo runnableDemo = new RunnableDemo();
+//        Thread thread = new Thread(runnableDemo);
+//        thread.start();
     }
 }
