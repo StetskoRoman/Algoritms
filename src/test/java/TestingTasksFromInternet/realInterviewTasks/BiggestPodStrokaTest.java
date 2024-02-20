@@ -8,10 +8,6 @@ import static TestingTasksFromInternet.realInterviewTasks.BiggestPodStroka.*;
 
 public class BiggestPodStrokaTest {
 
-//    @BeforeEach
-//
-//    BiggestPodStroka biggestPodStroka = new BiggestPodStroka();
-
     @Test
     void testSameLiterals() {
         Assertions.assertEquals(1, biggestSubstring("aaaaaaaa"));
