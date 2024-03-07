@@ -7,7 +7,7 @@ public class TestSynchro implements Runnable {
     }
 
     public synchronized void run() {
-        System.out.println("A start");
+        System.out.println("CountCharsAgain start");
         try {
             wait(2000);
         } catch (InterruptedException e) {

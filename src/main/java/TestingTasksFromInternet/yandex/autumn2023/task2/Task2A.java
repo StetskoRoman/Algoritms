@@ -104,11 +104,11 @@ public class Task2A {
 //                System.out.println(a.equals(b));
 //
 //
-//                changingOfCollection(-1, 'B', "2", A, B);
-//                System.out.println("A = " + A);
+//                changingOfCollection(-1, 'B', "2", CountCharsAgain, B);
+//                System.out.println("CountCharsAgain = " + CountCharsAgain);
 //                System.out.println("b = " + B);
 //
-//                System.out.println(variety(A, B));
+//                System.out.println(variety(CountCharsAgain, B));
 ////        int[] B = strToIntArray(term.get(2));
 ////        int q =
 ////

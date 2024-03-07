@@ -152,7 +152,7 @@ public class Task3 {
 //            partyA.add(new HashSet<>(i));
 //
 //            if (!partyA.contains(i)) {
-//                System.out.println(" int i = " + i + "    add to A i = " + i);
+//                System.out.println(" int i = " + i + "    add to CountCharsAgain i = " + i);
 //
 //
 //                if (partyA.size() == workMatrix.length - 2) {

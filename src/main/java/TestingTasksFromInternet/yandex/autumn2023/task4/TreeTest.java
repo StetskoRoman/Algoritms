@@ -105,7 +105,7 @@ class Tree<T>
 
 public class TreeTest {
     public static void main(String[] args) {
-        Tree<String> root = new Tree<String>("A");
+        Tree<String> root = new Tree<String>("CountCharsAgain");
         root.addChild("B");
         Tree<String> childC = root.addChild("C");
         root.addChild("D");

@@ -2,16 +2,16 @@ package garbage.expertSoft;
 
 class A {
     static {
-        System.out.println("static-A, ");
+        System.out.println("static-CountCharsAgain, ");
     }
 
 //    без скобок ошибка, получается как будто метод отдельный без названия и вообще без ничего
     {
-        System.out.println("init-A, ");
+        System.out.println("init-CountCharsAgain, ");
     }
 
     public A() {
-        System.out.println("constructor-A, ");
+        System.out.println("constructor-CountCharsAgain, ");
     }
 }
 

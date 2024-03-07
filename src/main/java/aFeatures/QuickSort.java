@@ -1,9 +1,6 @@
 package aFeatures;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
 import java.util.Arrays;
 
 public class QuickSort {
@@ -48,7 +45,7 @@ public class QuickSort {
     }
 
     public static void main(String[] args) throws IOException {
-            long[] x = {8, 0, 4, 7, 3, 7, 10, 12, -3};
+            long[] x = {15, 0, 4, 7, 15, 7, 10, 12, -3,-41};
         System.out.println("Было");
                 System.out.println(Arrays.toString(x));
 

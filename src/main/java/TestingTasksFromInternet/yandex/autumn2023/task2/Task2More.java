@@ -58,14 +58,14 @@ public class Task2More {
                     continue;
                 }
                 System.out.println("Step = " + (countQ - 2));
-                System.out.println("A = " + A);
+                System.out.println("CountCharsAgain = " + A);
                 System.out.println("B = " + B);
-                System.out.println("Old A = " + oldA);
+                System.out.println("Old CountCharsAgain = " + oldA);
                 System.out.println("Old B = " + oldB);
 //                if (countQ == 3) {
-//                    del = deleting(A, B);
-//                    result.append(variety(A, B) + " ");
-//                    System.out.println("after deleting " + A);
+//                    del = deleting(CountCharsAgain, B);
+//                    result.append(variety(CountCharsAgain, B) + " ");
+//                    System.out.println("after deleting " + CountCharsAgain);
 //                    System.out.println(B);
 //                    System.out.println(del);
 //                    countQ++;
@@ -79,8 +79,8 @@ public class Task2More {
 
                 counting += changingOfCollection(type, player, card, A, B, oldA, oldB);
                 result.append(counting + " ");
-//                result.append(variety(A, B) + " ");
-//                oldA = A;
+//                result.append(variety(CountCharsAgain, B) + " ");
+//                oldA = CountCharsAgain;
 //                oldB = B;
                 countQ++;
                 if (q + 2 < countQ) {

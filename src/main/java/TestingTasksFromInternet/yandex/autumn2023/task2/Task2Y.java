@@ -66,8 +66,8 @@ public class Task2Y {
             e.printStackTrace();
         }
 
-//        List<String> A = new ArrayList<>();
-//        A.addAll(term.get(1));
+//        List<String> CountCharsAgain = new ArrayList<>();
+//        CountCharsAgain.addAll(term.get(1));
 //        List<String> B = new ArrayList<>();
 //        B.addAll(term.get(2));
 
@@ -76,8 +76,8 @@ public class Task2Y {
 //            int type = Integer.parseInt(term.get(i).get(0));
 //            char player = term.get(i).get(1).charAt(0);
 //            String card = term.get(i).get(2);
-//            changingOfCollection(type, player, card, A, B);
-//            result.append(variety(A, B) + " ");
+//            changingOfCollection(type, player, card, CountCharsAgain, B);
+//            result.append(variety(CountCharsAgain, B) + " ");
 //        }
         System.out.println("result = " + result);
 

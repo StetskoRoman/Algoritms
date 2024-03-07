@@ -26,17 +26,17 @@ public class Task2Buffer {
 //        String[] arr3 = string3.split(" ");
 //        int q = Integer.parseInt(arr1[2]);
 //
-//        List<String> A = new ArrayList<>();
+//        List<String> CountCharsAgain = new ArrayList<>();
 //        List<String> B = new ArrayList<>();
 //        for (int i = 0; i < arr2.length; i++) {
-//            A.add(arr2[i]);
+//            CountCharsAgain.add(arr2[i]);
 //        }
 //        for (int i = 0; i < arr3.length; i++) {
 //            B.add(arr3[i]);
 //        }
 //
 //
-//        System.out.println(A);
+//        System.out.println(CountCharsAgain);
 //        System.out.println(B);
 //        System.out.println(q);
 
