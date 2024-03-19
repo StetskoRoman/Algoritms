@@ -47,7 +47,7 @@ public class Task5NokBigInt {
         boolean isNeedToReturn = false;
         int checkedPos = 0;
         int anotherCurC = 0;
-        boolean checkpoint = false;
+
         StringBuilder checkpointBuilder = new StringBuilder();
 
         BigInteger nul = new BigInteger("0");
@@ -55,7 +55,6 @@ public class Task5NokBigInt {
             if (count < countStart) {
                 return new StringBuilder("-1");
             }
-//            currBuilder = successBuilder[count - 1];
             currBuilder = new StringBuilder(successBuilder[count - 1]);
             if (count == countStart) {
                 curC = 0;
@@ -67,8 +66,6 @@ public class Task5NokBigInt {
                     //или +1
                 } else curC = appended[count];
             }
-
-
 //            System.out.println(currBuilder + "   " + curC + "   count = " + count);
             for (int c = curC; c < 10; c++) {
                 currBuilder.append(c);
@@ -86,6 +83,39 @@ public class Task5NokBigInt {
                     }
 
                     isNeedToReturn = false;
+
+                    count++;
+                    if (count == (countStart + d)) {
+                        return currBuilder;
+                    }
+                    break;
+
+                } else {
+                    currBuilder.deleteCharAt(currBuilder.length() - 1);
+                    isNeedToReturn = true;
+                }
+            }
+
+            if (isNeedToReturn == true) {
+                break;
+            }
+        }
+//        System.out.println(Arrays.toString(successBuilder));
+        return new StringBuilder("-1");
+    }
+
+}
+
+
+//    BigInteger a = new BigInteger("15");
+//    BigInteger b = new BigInteger("135");
+//
+//    //        System.out.println(nokCounting(a, b));
+//    BigInteger nul = new BigInteger("0");
+//    BigInteger ostInt = b.remainder(a);
+//        System.out.println(b.remainder(a) + "   " + ostInt);
+//                System.out.println(ostInt.compareTo(nul) == 0);
+
 //                    на случай если бы было много вариантов
 //                    if (checkpoint == false) {
 //                        for (int q = c + 1; q < 10; q++) {
@@ -108,37 +138,3 @@ public class Task5NokBigInt {
 //                        }
 //                    }
 //                    System.out.println("delay count ++ " + count);
-                    count++;
-                    if (count == (countStart + d)) {
-                        return currBuilder;
-//                        return successBuilder[count - 1];
-                    }
-                    break;
-
-                } else {
-                    currBuilder.deleteCharAt(currBuilder.length() - 1);
-                    isNeedToReturn = true;
-                }
-            }
-
-
-            if (isNeedToReturn == true) {
-                break;
-//                count--;
-            }
-        }
-//        System.out.println(Arrays.toString(successBuilder));
-        return new StringBuilder("-1");
-    }
-
-}
-
-
-//    BigInteger a = new BigInteger("15");
-//    BigInteger b = new BigInteger("135");
-//
-//    //        System.out.println(nokCounting(a, b));
-//    BigInteger nul = new BigInteger("0");
-//    BigInteger ostInt = b.remainder(a);
-//        System.out.println(b.remainder(a) + "   " + ostInt);
-//                System.out.println(ostInt.compareTo(nul) == 0);

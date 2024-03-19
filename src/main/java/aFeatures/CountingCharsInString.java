@@ -20,6 +20,9 @@ public class CountingCharsInString {
 //                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
 //        System.out.println(map);
 
+//        for copy двумерный массив скопировать
+//        int[][] workArray = Arrays.stream(array).map(int[]::clone).toArray(int[][]::new);
+
         String another = Arrays.stream(input.split(""))
                 .filter(m -> m.equals("q"))
                 .toString();
